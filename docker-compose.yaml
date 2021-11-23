@@ -11,7 +11,6 @@ services:
         resources:
             limits:
               memory: 2048M
-    container_name: code
     container_name: kwsnet-codeserver-1
     networks:
       - infra_chatbot
@@ -29,7 +28,6 @@ services:
         resources:
             limits:
               memory: 2048M
-    container_name: code
     container_name: kwsnet-codeserver-2
     networks:
       - infra_chatbot
