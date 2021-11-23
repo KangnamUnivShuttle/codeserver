@@ -16,7 +16,7 @@ RUN apt install python3.10 -y
 RUN alias python=python3.10
 RUN alias pip=pip3
 
-RUN install python3-pip python3.10-venv -y
+RUN apt install python3-pip python3.10-venv -y
 
 RUN python3 --version
 
