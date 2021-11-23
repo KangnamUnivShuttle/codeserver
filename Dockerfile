@@ -9,8 +9,8 @@ RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 RUN apt-get install libssl-dev openssl -y
-RUN wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tar.xz
-RUN tar xzvf Python-3.9.9.tar.xz
+RUN wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
+RUN tar xzvf Python-3.9.9.tgz
 WORKDIR ./Python-3.9.9
 RUN ./configure
 RUN make
