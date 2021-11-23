@@ -8,7 +8,7 @@ RUN apt-get install htop vim tmux wget -y
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
-RUN apt-get install libssl-dev openssl -y
+RUN apt-get install libssl-dev openssl build-essential -y
 RUN wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
 RUN tar xzvf Python-3.9.9.tgz
 WORKDIR ./Python-3.9.9
