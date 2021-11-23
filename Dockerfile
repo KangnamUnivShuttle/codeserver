@@ -8,14 +8,9 @@ RUN apt-get install htop vim tmux wget -y
 RUN curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
-RUN apt-get install libssl-dev openssl build-essential -y
-RUN wget https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz
-RUN tar xzvf Python-3.9.9.tgz
-WORKDIR ./Python-3.9.9
-RUN ./configure
-RUN make
-RUN make install
-RUN ln -fs ./Python /usr/bin/python
+RUN apt install software-properties-common -y
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt update
+RUN apt install python3.10 -y
 RUN python --version
 
-WORKDIR ../
