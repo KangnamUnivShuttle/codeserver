@@ -37,4 +37,4 @@ services:
       - ./vscode2/config:/config
     environment:
       VIRTUAL_HOST: kws1.gapmoe.net
-      VIRTUAL_PORT: 8443
+      VIRTUAL_PORT: 8444
