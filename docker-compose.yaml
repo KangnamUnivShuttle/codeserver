@@ -1,0 +1,42 @@
+version: '3'
+networks:
+  infra_chatbot:
+    external: true
+
+services:
+  codeserver:
+    image: code_server_cust
+    build: ./
+    deploy:
+        resources:
+            limits:
+              memory: 2048M
+    container_name: code
+    container_name: kwsnet-codeserver-1
+    networks:
+      - infra_chatbot
+    restart: always
+    user: root
+    volumes:
+      - ./vscode/config:/config
+    environment:
+      VIRTUAL_HOST: kws1.gapmoe.net
+      VIRTUAL_PORT: 8443
+  codeserver2:
+    image: code_server_cust
+    build: ./
+    deploy:
+        resources:
+            limits:
+              memory: 2048M
+    container_name: code
+    container_name: kwsnet-codeserver-2
+    networks:
+      - infra_chatbot
+    restart: always
+    user: root
+    volumes:
+      - ./vscode2/config:/config
+    environment:
+      VIRTUAL_HOST: kws1.gapmoe.net
+      VIRTUAL_PORT: 8443
