@@ -24,6 +24,8 @@ services:
   codeserver2:
     image: code_server_cust
     build: ./
+    env_file:
+      - ./.env
     deploy:
         resources:
             limits:
