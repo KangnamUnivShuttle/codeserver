@@ -25,10 +25,15 @@ RUN apt-get install unzip -y
 # RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 # RUN dpkg -i google-chrome-stable_current_amd64.deb
 
+# https://askubuntu.com/questions/79280/how-to-install-chrome-browser-properly-via-command-line
+
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 RUN sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 RUN apt-get update
 RUN apt-get install google-chrome-stable -y
 
 # RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sudo sysctl -p
-RUN sysctl -w fs.inotify.max_user_watches=524288
+# RUN sysctl -w fs.inotify.max_user_watches=524288
+RUN sysctl fs.inotify.max_user_watches=524288
+RUN sysctl -p
+RUN cat /proc/sys/fs/inotify/max_user_watches
