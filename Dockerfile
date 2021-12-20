@@ -45,3 +45,5 @@ RUN sysctl -p
 RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
 RUN cat /proc/sys/fs/inotify/max_user_watches
+
+RUN apt install fonts-nanum-coding -y
