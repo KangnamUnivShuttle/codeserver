@@ -39,7 +39,7 @@ RUN sysctl -p
 
 RUN echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
 
-RUN cat /proc/sys/fs/inotify/max_user_watches
-
 COPY ./sysctl.conf /etc/sysctl.conf
 RUN sysctl -p
+
+RUN cat /proc/sys/fs/inotify/max_user_watches
