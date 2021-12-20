@@ -36,4 +36,7 @@ RUN apt-get install google-chrome-stable -y
 # RUN sysctl -w fs.inotify.max_user_watches=524288
 RUN sysctl fs.inotify.max_user_watches=524288
 RUN sysctl -p
+
+RUN echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
+
 RUN cat /proc/sys/fs/inotify/max_user_watches
