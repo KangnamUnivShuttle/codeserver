@@ -30,4 +30,5 @@ RUN sh -c 'echo "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /et
 RUN apt-get update
 RUN apt-get install google-chrome-stable -y
 
-RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sudo sysctl -p
+# RUN echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sudo sysctl -p
+RUN sysctl -w fs.inotify.max_user_watches=524288
