@@ -7,7 +7,7 @@ services:
   codeserver:
     image: code_server_cust
     build: ./
-    command: sh -c "sysctl fs.inotify.max_user_watches=524288 && sysctl -p"
+#    command: sh -c "sysctl fs.inotify.max_user_watches=524288 && sysctl -p"
     deploy:
         resources:
             limits:
@@ -25,7 +25,7 @@ services:
   codeserver2:
     image: code_server_cust
     build: ./
-    command: sh -c "sysctl fs.inotify.max_user_watches=524288 && sysctl -p"
+ #   command: sh -c "sysctl fs.inotify.max_user_watches=524288 && sysctl -p"
     env_file:
       - ./.env
     deploy:
