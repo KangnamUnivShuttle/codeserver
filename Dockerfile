@@ -1,4 +1,4 @@
-FROM linuxserver/code-server:version-v3.11.0
+FROM linuxserver/code-server:4.0.1-focal
 
 RUN apt-get update
 RUN apt-get upgrade -y
